@@ -1,0 +1,6 @@
+<h2 class="margin-padding">Cart</h2>
+
+<div class="cart-item margin-padding" *ngFor="let item of items">
+    <span>{{ item.title }}</span>
+    <span>{{ item.price | currency }}</span>
+</div>

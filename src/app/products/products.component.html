@@ -1,0 +1,16 @@
+<h2 class="margin-padding">Candy Products</h2>
+
+
+  <mat-card class="product-card margin-padding" *ngFor="let item of candy | async " (click)="addToCart(item)">
+   <a>
+    <mat-card-header>
+      <mat-card-title>{{item.title}}</mat-card-title>
+      <mat-card-subtitle>{{item.price}}</mat-card-subtitle>
+    </mat-card-header>
+    <!-- <mat-card-content>
+      <p>
+        {{item.desc}}
+      </p>
+    </mat-card-content> -->
+  </a>
+  </mat-card>
