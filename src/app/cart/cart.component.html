@@ -1,6 +1,30 @@
-<h2 class="margin-padding">Cart</h2>
+<div class="cart-header">
+  <div class="margin-padding cart-header-style">Cart</div>
+  <div class="margin-padding">
+    <button (click)="clearCart()"> Empty Cart</button>
+  </div>
+</div>
 
-<div class="cart-item margin-padding" *ngFor="let item of items">
-    <span>{{ item.title }}</span>
-    <span>{{ item.price | currency }}</span>
+<div class="cart-item" *ngFor="let item of items ">
+  <div class="cart-item-header">
+    <div class="cart-item-title">{{ item.title }}</div>
+    <div>
+      <span class="cart-item-header-add-del"><button (click)="decrement(item)" [disabled]="item.quantity <= 0" class='qtyminus'>-</button></span>
+      <span class="cart-item-header-add-del"><input type='number' min=0 id='quantity' name='quantity' #quantity value='{{item.quantity}}' class='qty' (change)="update(item, quantity.value)"/></span>
+      <span class="cart-item-header-add-del"><button (click)="increment(item)" class="qty-plus">+</button></span>
+    </div>
+  </div>
+
+  <div class="cart-item-desc">
+    <div>
+      <span class="cart-item-total">{{item.quantity * item.price | currency}}</span>
+    </div>
+  <div>
+    <button (click)="delete(item)">Delete</button>
+  </div>
+</div>
+</div>
+
+<div class="cart-items-total">
+  <span>Total is: {{total |currency}}</span>
 </div>

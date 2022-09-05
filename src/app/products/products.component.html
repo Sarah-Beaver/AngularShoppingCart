@@ -5,12 +5,7 @@
    <a>
     <mat-card-header>
       <mat-card-title>{{item.title}}</mat-card-title>
-      <mat-card-subtitle>{{item.price}}</mat-card-subtitle>
+      <mat-card-subtitle style="font-weight: bold;">{{item.price | currency}}</mat-card-subtitle>
     </mat-card-header>
-    <!-- <mat-card-content>
-      <p>
-        {{item.desc}}
-      </p>
-    </mat-card-content> -->
   </a>
   </mat-card>
